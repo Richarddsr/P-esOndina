@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Miolo & Casca | Pães de Fermentação Natural</title>
+  <meta name="description" content="Conheça nossos pães de fermentação natural disponíveis para encomenda: descrição, ingredientes, peso e preço." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="progress" id="progress"></div>
+
+  <!-- NAVBAR -->
+  <header class="nav" id="nav">
+    <a href="#inicio" class="nav__logo">Pães da Ondina</a>
+
+    <button class="nav__toggle" id="navToggle" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav__links" id="navLinks">
+      <a href="#destaque">Destaque</a>
+      <a href="#produtos">Produtos</a>
+      <a href="#encomendas">Encomendas</a>
+      <a href="#fornadas">Fornadas</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato" class="nav__cta">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="hero__blob hero__blob--1"></div>
+      <div class="hero__blob hero__blob--2"></div>
+
+      <div class="hero__content">
+        <p class="eyebrow">Padaria artesanal</p>
+        <h1>Pães de <em>fermentação natural</em>, assados sob encomenda.</h1>
+        <p class="hero__text">
+          Farinha, água, sal e tempo. Conheça os pães da semana, veja os
+          ingredientes de cada um e faça sua encomenda.
+        </p>
+        <div class="hero__actions">
+          <a href="#produtos" class="btn btn--primary">Ver produtos</a>
+          <a href="#encomendas" class="btn btn--ghost">Como encomendar</a>
+        </div>
+      </div>
+
+      <div class="hero__visual" aria-hidden="true">
+        <div class="loaf">
+          <span class="loaf__score loaf__score--1"></span>
+          <span class="loaf__score loaf__score--2"></span>
+          <span class="loaf__score loaf__score--3"></span>
+        </div>
+        <span class="bubble bubble--1"></span>
+        <span class="bubble bubble--2"></span>
+        <span class="bubble bubble--3"></span>
+      </div>
+
+      <a href="#destaque" class="hero__scroll" aria-label="Rolar para baixo">↓</a>
+    </section>
+
+    <!-- FAIXA ANIMADA -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Levain próprio</span><span>✦</span><span>Longa fermentação</span><span>✦</span>
+        <span>Sem conservantes</span><span>✦</span><span>Assado no dia</span><span>✦</span>
+        <span>Feito à mão</span><span>✦</span>
+        <span>Levain próprio</span><span>✦</span><span>Longa fermentação</span><span>✦</span>
+        <span>Sem conservantes</span><span>✦</span><span>Assado no dia</span><span>✦</span>
+        <span>Feito à mão</span><span>✦</span>
+      </div>
+    </div>
+
+    <!-- DESTAQUE DA SEMANA -->
+    <section class="section feature" id="destaque">
+      <div class="container feature__grid">
+
+        <figure class="feature__media reveal">
+          <span class="media__placeholder" aria-hidden="true">🍞</span>
+          <!-- TROQUE o src pela foto do seu pão em destaque -->
+          <img src="imagens/Chocolate.jpg" alt="Pão de chocolate" onerror="this.remove()" />
+          <span class="badge badge--float">Destaque da semana</span>
+        </figure>
+
+        <div class="feature__info reveal">
+          <p class="eyebrow">Em destaque</p>
+          <h2>Pão de <em>chocolate</em></h2>
+          <p>
+            Massa macia com notas de chocolate amargo e chocolate branco, perfeita para quem gosta de um pão doce
+            e irresistível no café da manhã ou no lanche da tarde.
+          </p>
+
+          <dl class="specs">
+            <div><dt>Peso</dt><dd>800 g</dd></div>
+            <div><dt>Fermentação</dt><dd>24 horas</dd></div>
+            <div><dt>Validade</dt><dd>4 a 5 dias</dd></div>
+          </dl>
+
+          <div class="feature__footer">
+            <span class="price price--big">R$ 28,00</span>
+            <a class="btn btn--primary" href="https://wa.me/48920025597?text=Olá!%20Quero%20encomendar%20o%20Pão%20de%20chocolate." target="_blank" rel="noopener">Encomendar</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CATÁLOGO -->
+    <section class="section catalog" id="produtos">
+      <div class="container">
+
+        <div class="section__head reveal">
+          <p class="eyebrow">Nosso cardápio</p>
+          <h2>Pães <em>disponíveis</em></h2>
+          <p>Todos feitos com levain natural e assados sob encomenda. Filtre por categoria.</p>
+        </div>
+
+        <div class="filters" id="filters">
+          <button class="chip is-active" data-filter="todos">Todos</button>
+          <button class="chip" data-filter="rustico">Rústicos</button>
+          <button class="chip" data-filter="integral">Integrais</button>
+          <button class="chip" data-filter="recheado">Recheados</button>
+          <button class="chip" data-filter="doce">Doces</button>
+        </div>
+
+        <div class="product-grid" id="productGrid">
+
+          <!--
+            ===== MODELO DE PRODUTO =====
+            Para adicionar um pão novo, copie um <article> inteiro e troque:
+            - data-cat: rustico | integral | recheado | doce
+            - src da imagem (coloque o arquivo na pasta "imagens")
+            - nome, descrição, peso, ingredientes, preço e texto do WhatsApp
+            Se a imagem não existir, aparece automaticamente o emoji do placeholder.
+          -->
+
+          <!-- PRODUTO 1 -->
+          <article class="product reveal" data-cat="rustico">
+            <figure class="product__media tone-1">
+              <span class="media__placeholder" aria-hidden="true">🍞</span>
+              <img src="imagens/Chocolate.jpg" alt="Pão de chocolate" onerror="this.remove()" />
+              <span class="badge badge--top">Mais vendido</span>
+            </figure>
+            <div class="product__body">
+              <p class="product__cat">Rústico</p>
+              <h3>Pão de chocolate</h3>
+              <p class="product__desc">Casca crocante, miolo úmido e sabor marcante. O clássico de todo dia.</p>
+              <ul class="product__meta">
+                <li>⚖️ 800 g</li>
+                <li>⏳ 24 h de fermentação</li>
+              </ul>
+              <p class="product__ingredients"><strong>Ingredientes:</strong> farinha de trigo, água, levain, sal e chocolate</p>
+              <div class="product__footer">
+                <span class="price">R$ 28,00</span>
+                <a class="btn btn--small" href="https://wa.me/48920025597?text=Olá!%20Quero%20encomendar%20o%20Pão%20de%20chocolate." target="_blank" rel="noopener">Encomendar</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PRODUTO 2 -->
+          <article class="product reveal" data-cat="integral">
+            <figure class="product__media tone-2">
+              <span class="media__placeholder" aria-hidden="true">🌾</span>
+              <img src="imagens/Graos.jpg" alt="Pão integral com sementes" onerror="this.remove()" />
+              <span class="badge badge--green">Vegano</span>
+            </figure>
+            <div class="product__body">
+              <p class="product__cat">Integral</p>
+              <h3>Integral com sementes</h3>
+              <p class="product__desc">Rico em fibras, com linhaça, girassol e gergelim para crocância e nutrição.</p>
+              <ul class="product__meta">
+                <li>⚖️ 700 g</li>
+                <li>⏳ 30 h de fermentação</li>
+              </ul>
+              <p class="product__ingredients"><strong>Ingredientes:</strong> farinha integral, farinha de trigo, água, levain, sementes, sal.</p>
+              <div class="product__footer">
+                <span class="price">R$ 32,00</span>
+                <a class="btn btn--small" href="https://wa.me/48920025597?text=Olá!%20Quero%20encomendar%20o%20Integral%20com%20sementes." target="_blank" rel="noopener">Encomendar</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PRODUTO 3 -->
+          <article class="product reveal" data-cat="recheado">
+            <figure class="product__media tone-3">
+              <span class="media__placeholder" aria-hidden="true">🫒</span>
+              <img src="imagens/Doce.jpg" alt="Pão de goiabda" loading="lazy" onerror="this.remove()" />
+              <span class="badge badge--green">Vegano</span>
+            </figure>
+            <div class="product__body">
+              <p class="product__cat">Pão de goiabda</p>
+              <h3>Goiabda e canela</h3>
+              <p class="product__desc">Doce e aromático, perfeito para o café da manhã.</p>
+              <ul class="product__meta">
+                <li>⚖️ 400 g</li>
+                <li>⏳ 24 h de fermentação</li>
+              </ul>
+              <p class="product__ingredients"><strong>Ingredientes:</strong> farinha de trigo, água, levain, goiabda, canela, sal.</p>
+              <div class="product__footer">
+                <span class="price">R$ 15,00</span>
+                <a class="btn btn--small" href="https://wa.me/48920025597?text=Olá!%20Quero%20encomendar%20o%20pão%20de%20Goiabda%20e%20canela." target="_blank" rel="noopener">Encomendar</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PRODUTO 4 -->
+          <article class="product reveal" data-cat="rustico">
+            <figure class="product__media tone-4">
+              <span class="media__placeholder" aria-hidden="true">🥖</span>
+              <img src="imagens/Baguete.jpg" alt="Baguete de levain" loading="lazy" onerror="this.remove()" />
+            </figure>
+            <div class="product__body">
+              <p class="product__cat">Rústico</p>
+              <h3>Baguete de levain</h3>
+              <p class="product__desc">Comprida, leve e crocante, com miolo alveolado e aroma de forno.</p>
+              <ul class="product__meta">
+                <li>⚖️ 350 g</li>
+                <li>⏳ 24 h de fermentação</li>
+              </ul>
+              <p class="product__ingredients"><strong>Ingredientes:</strong> farinha de trigo, água, levain, sal.</p>
+              <div class="product__footer">
+                <span class="price">R$ 16,00</span>
+                <a class="btn btn--small" href="https://wa.me/48920025597?text=Olá!%20Quero%20encomendar%20a%20Baguete%20de%20levain." target="_blank" rel="noopener">Encomendar</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PRODUTO 5 -->
+          <article class="product reveal" data-cat="recheado">
+            <figure class="product__media tone-5">
+              <span class="media__placeholder" aria-hidden="true">🧀</span>
+              <img src="imagens/queijo-pimenta.jpg" alt="Pão de queijo e pimenta" loading="lazy" onerror="this.remove()" />
+              <span class="badge badge--top">Novo</span>
+            </figure>
+            <div class="product__body">
+              <p class="product__cat">Recheado</p>
+              <h3>Queijo e pimenta</h3>
+              <p class="product__desc">Queijo curado derretido na massa e um toque de pimenta-do-reino.</p>
+              <ul class="product__meta">
+                <li>⚖️ 750 g</li>
+                <li>⏳ 24 h de fermentação</li>
+              </ul>
+              <p class="product__ingredients"><strong>Ingredientes:</strong> farinha de trigo, água, levain, queijo curado, pimenta-do-reino, sal.</p>
+              <div class="product__footer">
+                <span class="price">R$ 38,00</span>
+                <a class="btn btn--small" href="https://wa.me/5548999999999?text=Olá!%20Quero%20encomendar%20o%20pão%20de%20Queijo%20e%20pimenta." target="_blank" rel="noopener">Encomendar</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PRODUTO 6 -->
+          <article class="product reveal" data-cat="integral">
+            <figure class="product__media tone-6">
+              <span class="media__placeholder" aria-hidden="true">🥣</span>
+              <img src="imagens/centeio-mel.jpg" alt="Pão de centeio e mel" loading="lazy" onerror="this.remove()" />
+            </figure>
+            <div class="product__body">
+              <p class="product__cat">Integral</p>
+              <h3>Centeio e mel</h3>
+              <p class="product__desc">Massa densa e levemente adocicada, com aroma terroso do centeio.</p>
+              <ul class="product__meta">
+                <li>⚖️ 650 g</li>
+                <li>⏳ 36 h de fermentação</li>
+              </ul>
+              <p class="product__ingredients"><strong>Ingredientes:</strong> farinha de centeio, farinha de trigo, água, levain, mel, sal.</p>
+              <div class="product__footer">
+                <span class="price">R$ 30,00</span>
+                <a class="btn btn--small" href="https://wa.me/5548999999999?text=Olá!%20Quero%20encomendar%20o%20pão%20de%20Centeio%20e%20mel." target="_blank" rel="noopener">Encomendar</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PRODUTO 7 -->
+          <article class="product reveal" data-cat="doce">
+            <figure class="product__media tone-7">
+              <span class="media__placeholder" aria-hidden="true">🍇</span>
+              <img src="imagens/uva-passa-nozes.jpg" alt="Pão de uva-passa e nozes" loading="lazy" onerror="this.remove()" />
+              <span class="badge badge--green">Vegano</span>
+            </figure>
+            <div class="product__body">
+              <p class="product__cat">Doce</p>
+              <h3>Uva-passa e nozes</h3>
+              <p class="product__desc">Levemente doce, com frutas secas e canela. Ótimo para o lanche da tarde.</p>
+              <ul class="product__meta">
+                <li>⚖️ 600 g</li>
+                <li>⏳ 24 h de fermentação</li>
+              </ul>
+              <p class="product__ingredients"><strong>Ingredientes:</strong> farinha de trigo, água, levain, uva-passa, nozes, canela, sal.</p>
+              <div class="product__footer">
+                <span class="price">R$ 36,00</span>
+                <a class="btn btn--small" href="https://wa.me/5548999999999?text=Olá!%20Quero%20encomendar%20o%20pão%20de%20Uva-passa%20e%20nozes." target="_blank" rel="noopener">Encomendar</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PRODUTO 8 -->
+          <article class="product reveal" data-cat="doce">
+            <figure class="product__media tone-8">
+              <span class="media__placeholder" aria-hidden="true">🍫</span>
+              <img src="imagens/chocolate-laranja.jpg" alt="Pão de chocolate e laranja" loading="lazy" onerror="this.remove()" />
+              <span class="badge badge--top">Edição limitada</span>
+            </figure>
+            <div class="product__body">
+              <p class="product__cat">Doce</p>
+              <h3>Chocolate e laranja</h3>
+              <p class="product__desc">Gotas de chocolate meio amargo e raspas de laranja em massa macia.</p>
+              <ul class="product__meta">
+                <li>⚖️ 600 g</li>
+                <li>⏳ 24 h de fermentação</li>
+              </ul>
+              <p class="product__ingredients"><strong>Ingredientes:</strong> farinha de trigo, água, levain, chocolate meio amargo, laranja, açúcar mascavo, sal.</p>
+              <div class="product__footer">
+                <span class="price">R$ 40,00</span>
+                <a class="btn btn--small" href="https://wa.me/48920025597?text=Olá!%20Quero%20encomendar%20o%20pão%20de%20Chocolate%20e%20laranja." target="_blank" rel="noopener">Encomendar</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="catalog__empty" id="catalogEmpty" hidden>Nenhum pão nesta categoria no momento.</p>
+        <p class="catalog__note reveal">* Valores e disponibilidade podem mudar conforme a fornada.</p>
+      </div>
+    </section>
+
+    <!-- COMO ENCOMENDAR -->
+    <section class="section order" id="encomendas">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">Passo a passo</p>
+          <h2>Como <em>encomendar</em></h2>
+        </div>
+
+        <ol class="order__steps">
+          <li class="order__step reveal">
+            <span class="order__num">1</span>
+            <h3>Escolha seus pães</h3>
+            <p>Veja o cardápio acima e anote os pães e as quantidades que deseja.</p>
+          </li>
+          <li class="order__step reveal">
+            <span class="order__num">2</span>
+            <h3>Fale com a gente</h3>
+            <p>Clique em "Encomendar" para enviar o pedido pelo WhatsApp com até 48 h de antecedência.</p>
+          </li>
+          <li class="order__step reveal">
+            <span class="order__num">3</span>
+            <h3>Retire ou receba</h3>
+            <p>Confirmamos o pedido e combinamos a retirada ou a entrega na data da fornada.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- FORNADAS -->
+    <section class="section bake" id="fornadas">
+      <div class="container bake__grid">
+        <div class="reveal">
+          <p class="eyebrow">Agenda</p>
+          <h2>Dias de <em>fornada</em></h2>
+          <p>
+            Cada pão leva de 24 a 36 horas para ficar pronto. Por isso, trabalhamos
+            com fornadas em dias fixos, sempre assadas na manhã da entrega.
+          </p>
+        </div>
+
+        <ul class="bake__days reveal">
+          <li><span>Ter</span><strong>Chocolate, baguete e integral</strong></li>
+          <li><span>Qui</span><strong>Recheados e centeio</strong></li>
+          <li><span>Sáb</span><strong>Todos os pães + doces</strong></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section class="section about" id="sobre">
+      <div class="container about__grid">
+        <div class="reveal">
+          <p class="eyebrow">Nossa história</p>
+          <h2>Pão feito com <em>tempo</em>.</h2>
+          <p>
+            Usamos apenas farinha, água, sal e levain, uma cultura natural de leveduras
+            e bactérias que fermenta a massa devagar. Sem fermento químico e sem conservantes.
+          </p>
+          <p>
+            O resultado é um pão com casca crocante, miolo macio, mais sabor e mais dias de frescor.
+          </p>
+        </div>
+
+        <div class="about__cards">
+          <article class="card reveal">
+            <span class="card__icon">🌾</span>
+            <h3>Ingredientes simples</h3>
+            <p>Só o que é necessário, sem aditivos.</p>
+          </article>
+          <article class="card reveal">
+            <span class="card__icon">⏳</span>
+            <h3>Longa fermentação</h3>
+            <p>De 24 a 36 horas para mais sabor e digestão leve.</p>
+          </article>
+          <article class="card reveal">
+            <span class="card__icon">🔥</span>
+            <h3>Assado na hora</h3>
+            <p>Saindo do forno na manhã da sua entrega.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section class="section contact" id="contato">
+      <div class="container contact__box reveal">
+        <div>
+          <p class="eyebrow">Fale com a gente</p>
+          <h2>Pronto para <em>encomendar</em>?</h2>
+          <p>Chame no WhatsApp ou venha nos visitar.</p>
+        </div>
+
+        <ul class="contact__list">
+          <li><span>📱 WhatsApp</span><a href="https://wa.me/48920025597" target="_blank" rel="noopener">(48) 92002-5597</a></li>
+          <li><span>📍 Endereço</span><strong>Rua Servidão do Naufrago, 268, Armação do Pantano do sul</strong></li>
+          <li><span>🕒 Atendimento</span><strong>Seg a Sáb, 8h às 18h</strong></li>
+          <li><span>📸 Instagram</span><a href="https://www.instagram.com/mariaondinamor" target="_blank" rel="noopener">@mariaondinamor</a></li>
+        </ul>
+
+        <a class="btn btn--primary" href="https://wa.me/48920025597" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__logo">Pães da Ondina</p>
+      <p>Pães de fermentação natural, feitos com paciência. 🍞</p>
+      <a href="#inicio" class="footer__top">Voltar ao topo ↑</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
